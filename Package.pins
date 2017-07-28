@@ -1,0 +1,12 @@
+{
+  "autoPin": true,
+  "pins": [
+    {
+      "package": "Qlift",
+      "reason": null,
+      "repositoryURL": "https://github.com/Longhanks/qlift",
+      "version": "0.0.36"
+    }
+  ],
+  "version": 1
+}
