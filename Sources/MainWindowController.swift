@@ -1,6 +1,6 @@
 /*
 
-  **UI_MainWindow.swift**
+  **MainWindowController.swift**
   The Swift Machine
   Version 0.1.0
   (C) 2017 | Artemis Project Team
@@ -10,7 +10,7 @@
 import Qlift
 
 //Create a window object that contains all the window information
-class UI_MainWindow: QMainWindow {
+class MainWindowController: QMainWindow {
 
     //Init all UI components to be used later
     var centralwidget: QWidget!
