@@ -1,6 +1,18 @@
+/*
+
+  **UI_MainWindow.swift**
+  The Swift Machine
+  Version 0.1.0
+  (C) 2017 | Artemis Project Team
+  Licensed under GNU GPL v3
+
+*/
 import Qlift
 
+//Create a window object that contains all the window information
 class UI_MainWindow: QMainWindow {
+
+    //Init all UI components to be used later
     var centralwidget: QWidget!
     var verticalLayout: QVBoxLayout!
     var horizontalLayout: QHBoxLayout!
@@ -9,15 +21,22 @@ class UI_MainWindow: QMainWindow {
     var horizontalSpacerRight: QSpacerItem!
     var menubar: QMenuBar!
     var menuFile: QMenu!
-    var actionNewGame: QAction!
     var actionExit: QAction!
 
+
+    //Init the window and all of its components
     init() {
+
+        //Initialize window
         super.init()
         actionExit = QAction(parent: self)
         actionExit.text = "&Exit"
+
+        //Initialize window's dimensions and the title of the window
         self.geometry = QRect(x: 0, y: 0, width: 800, height: 600)
         self.windowTitle = "The Swift Machine"
+
+        //Initialize the contents of the window
         centralwidget = QWidget(parent: self)
         verticalLayout = QVBoxLayout(parent: centralwidget)
         horizontalLayout = QHBoxLayout(parent: nil)
@@ -30,6 +49,8 @@ class UI_MainWindow: QMainWindow {
         horizontalLayout.add(item: horizontalSpacerRight)
         verticalLayout.add(layout: horizontalLayout)
         self.centralWidget = centralwidget
+
+        //Initialize the menu bar and its components
         menubar = QMenuBar(parent: self)
         menubar.geometry = QRect(x: 0, y: 0, width: 205, height: 30)
         menuFile = QMenu(parent: menubar)

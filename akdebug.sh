@@ -6,5 +6,5 @@ echo "---"
 echo "Building application..."
 swift build
 echo "Done. Running built application..."
-./.build/debug/lorem
+./.build/debug/swift-machine
 echo "Done."
