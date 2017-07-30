@@ -20,39 +20,13 @@ class MainWindowController: QMainWindow {
     var aliceKitLabels: QLabel!
     var horizontalSpacerRight: QSpacerItem!
     var menubar: QMenuBar!
-    var menuFile: QMenu!
-
-    //Init all menubar functions
-    var actionExit: QAction!
-    var actionNewFile: QAction!
-    var actionNewProject: QAction!
-    var actionOpenFile: QAction!
-    var actionSaveFile: QAction!
-
+    let mainMenuMWC = mainMenu()
 
     //Init the window and all of its components
     init() {
 
         //Initialize window
         super.init()
-
-        //Initialize menubar options
-
-        /* File */
-        actionNewFile = QAction(parent: self)
-        actionNewFile.text = "&New File"
-
-        actionNewProject = QAction(parent: self)
-        actionNewProject.text = "New &Project"
-
-        actionOpenFile = QAction(parent: self)
-        actionOpenFile.text = "&Open"
-
-        actionSaveFile = QAction(parent: self)
-        actionSaveFile.text = "&Save"
-
-        actionExit = QAction(parent: self)
-        actionExit.text = "&Exit"
 
         //Initialize window's dimensions and the title of the window
         self.geometry = QRect(x: 0, y: 0, width: 800, height: 600)
@@ -77,14 +51,9 @@ class MainWindowController: QMainWindow {
         menubar.geometry = QRect(x: 0, y: 0, width: 205, height: 30)
 
         //Create the File menu and add all its members
-        menuFile = QMenu(parent: menubar)
-        menuFile.title = "&File"
-        menuFile.add(action: actionNewFile)
-        menuFile.add(action: actionNewProject)
-        menuFile.add(action: actionOpenFile)
-        menuFile.add(action: actionSaveFile)
-        menuFile.add(action: actionExit)
-        menubar.add(action: menuFile.menuAction())
+        mainMenuMWC.menuFile = QMenu(parent: menubar)
+
+        mainMenuMWC.createMenu()
 
         //Attach the menubar
         self.menuBar = menubar
