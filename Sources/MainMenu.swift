@@ -55,6 +55,7 @@ class mainMenu: QMenuBar {
     menuFile.add(action: actionOpenFile)
     menuFile.add(action: actionSaveFile)
     menuFile.add(action: actionExit)
+    add(action: menuFile.menuAction())
 
   }
 }

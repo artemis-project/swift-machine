@@ -19,7 +19,6 @@ class MainWindowController: QMainWindow {
     var horizontalSpacerLeft: QSpacerItem!
     var aliceKitLabels: QLabel!
     var horizontalSpacerRight: QSpacerItem!
-    var menubar: QMenuBar!
     let mainMenuMWC = mainMenu()
 
     //Init the window and all of its components
@@ -46,17 +45,12 @@ class MainWindowController: QMainWindow {
         verticalLayout.add(layout: horizontalLayout)
         self.centralWidget = centralwidget
 
-        //Initialize the menu bar and its components
-        menubar = QMenuBar(parent: self)
-        menubar.geometry = QRect(x: 0, y: 0, width: 205, height: 30)
-
         //Create the File menu and add all its members
-        mainMenuMWC.menuFile = QMenu(parent: menubar)
-
+        mainMenuMWC.menuFile = QMenu(parent: mainMenuMWC)
         mainMenuMWC.createMenu()
 
         //Attach the menubar
-        self.menuBar = menubar
+        self.menuBar = mainMenuMWC
 
     }
 }
