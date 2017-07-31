@@ -15,19 +15,46 @@ class mainMenu: QMenuBar {
 
   //Initialize the menubar and its menu
   var menuFile: QMenu!
+  var menuEdit: QMenu!
 
   //Init all menubar functions
+
+    /*
+        File
+            New File
+            New Project
+            Open
+            Save
+            Exit
+     */
+
   var actionExit: QAction!
   var actionNewFile: QAction!
   var actionNewProject: QAction!
   var actionOpenFile: QAction!
   var actionSaveFile: QAction!
 
-
+    /*
+        Edit
+            Cut
+            Copy
+            Paste
+            Find and Replace
+            Emoji and Symbols
+            Preferences
+     */
+     
+   var actionCut: QAction!
+   var actionCopy: QAction!
+   var actionPaste: QAction!
+   var actionFindReplace: QAction!
+   var actionEmojiSymbols: QAction!
+   var actionPreferences: QAction!
 
   init() {
       super.init()
-
+      
+      //File
       actionNewFile = QAction(parent: self)
       actionNewFile.text = "&New File"
 
@@ -42,6 +69,25 @@ class mainMenu: QMenuBar {
 
       actionExit = QAction(parent: self)
       actionExit.text = "&Exit"
+      
+      //Edit
+      actionCut = QAction(parent: self)
+      actionCut.text = "&Cut"
+      
+      actionCopy = QAction(parent: self)
+      actionCopy.text = "C&opy"
+      
+      actionPaste = QAction(parent: self)
+      actionPaste.text = "&Paste"
+      
+      actionFindReplace = QAction(parent: self)
+      actionFindReplace.text = "&Find and Replace"
+      
+      actionEmojiSymbols = QAction(parent: self)
+      actionEmojiSymbols.text = "&Emoji and Symbols"
+      
+      actionPreferences = QAction(parent: self)
+      actionPreferences.text = "P&references"
   }
 
   func createMenu() {
@@ -54,6 +100,15 @@ class mainMenu: QMenuBar {
     menuFile.add(action: actionSaveFile)
     menuFile.add(action: actionExit)
     add(action: menuFile.menuAction())
+    
+    menuEdit.title = "&Edit"
+    menuEdit.add(action: actionCut)
+    menuEdit.add(action: actionCopy)
+    menuEdit.add(action: actionPaste)
+    menuEdit.add(action: actionFindReplace)
+    menuEdit.add(action: actionEmojiSymbols)
+    menuEdit.add(action: actionPreferences)
+    add(action: menuEdit.menuAction())
 
   }
 }

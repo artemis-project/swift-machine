@@ -45,8 +45,9 @@ class MainWindowController: QMainWindow {
         verticalLayout.add(layout: horizontalLayout)
         self.centralWidget = centralwidget
 
-        //Create the File menu and add all its members
+        //Create the menu and add all its members
         mainMenuMWC.menuFile = QMenu(parent: mainMenuMWC)
+        mainMenuMWC.menuEdit = QMenu(parent: mainMenuMWC)
         mainMenuMWC.createMenu()
 
         //Attach the menubar
