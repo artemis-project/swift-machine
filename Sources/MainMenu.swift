@@ -8,8 +8,6 @@
 
 */
 
-//TODO: Fix menubar issue of it not attaching properly to MainWindowController
-
 import Qlift
 
 //Create the main menu object

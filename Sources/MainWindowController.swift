@@ -38,7 +38,7 @@ class MainWindowController: QMainWindow {
         horizontalSpacerLeft = QSpacerItem(width: 40, height: 20, horizontalPolicy: .Expanding, verticalPolicy: .Minimum)
         horizontalLayout.add(item: horizontalSpacerLeft)
         aliceKitLabels = QLabel(parent: centralwidget)
-        aliceKitLabels.text = "Congratulations!\nYour AliceKit app is successfully up and running!"
+        aliceKitLabels.text = "Coming soon, with more ink\n\nSomething AMAZING will be here in this window soon! We can't wait to demo it to you once we have enough ink.\n\nIf you want to contribute to the project, look for The Swift Machine on GitHub."
         horizontalLayout.add(widget: aliceKitLabels)
         horizontalSpacerRight = QSpacerItem(width: 40, height: 20, horizontalPolicy: .Expanding, verticalPolicy: .Minimum)
         horizontalLayout.add(item: horizontalSpacerRight)
