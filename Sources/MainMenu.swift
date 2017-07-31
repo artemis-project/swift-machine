@@ -16,9 +16,10 @@ class mainMenu: QMenuBar {
   //Initialize the menubar and its menu
   var menuFile: QMenu!
   var menuEdit: QMenu!
+  var menuWindow: QMenu!
 
   //Init all menubar functions
-
+  var actionSeparator: QAction!
     /*
         File
             New File
@@ -51,9 +52,25 @@ class mainMenu: QMenuBar {
    var actionEmojiSymbols: QAction!
    var actionPreferences: QAction!
 
+    /*
+        Window
+            Assistant Editor
+            Command Launchpad
+            ---
+            Minimize
+            Maximize
+     */
+    var actionShowAssistantEditor: QAction!
+    var actionShowCommandLaunchpad: QAction!
+    var actionMinimize: QAction!
+    var actionMaximize: QAction!
+
   init() {
       super.init()
       
+      actionSeparator = QAction(parent: self)
+      actionSeparator.text = "------"
+
       //File
       actionNewFile = QAction(parent: self)
       actionNewFile.text = "&New File"
@@ -88,6 +105,19 @@ class mainMenu: QMenuBar {
       
       actionPreferences = QAction(parent: self)
       actionPreferences.text = "P&references"
+
+      //Window
+      actionShowAssistantEditor = QAction(parent: self)
+      actionShowAssistantEditor.text = "&Assistant Editor"
+
+      actionShowCommandLaunchpad = QAction(parent: self)
+      actionShowCommandLaunchpad.text = "&Command Launchpad"
+
+      actionMinimize = QAction(parent: self)
+      actionMinimize.text = "&Minimize"
+
+      actionMaximize = QAction(parent: self)
+      actionMaximize.text = "M&aximize"
   }
 
   func createMenu() {
@@ -109,6 +139,14 @@ class mainMenu: QMenuBar {
     menuEdit.add(action: actionEmojiSymbols)
     menuEdit.add(action: actionPreferences)
     add(action: menuEdit.menuAction())
+
+    menuWindow.title = "&Window"
+    menuWindow.add(action: actionShowAssistantEditor)
+    menuWindow.add(action: actionShowCommandLaunchpad)
+    menuWindow.add(action: actionSeparator)
+    menuWindow.add(action: actionMinimize)
+    menuWindow.add(action: actionMaximize)
+    add(action: menuWindow.menuAction())
 
   }
 }
