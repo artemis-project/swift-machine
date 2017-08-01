@@ -20,13 +20,6 @@ import Qlift
 class SwiftMachine: MainWindowController {
     override init() {
         super.init()
-
-        //TODO: figure out a way for actionExit to exit app properly (this will help bind other menu actions to their respective funtions)
-        self.mainMenuMWC.actionExit.activate(ActionEvent: self.exitApp)
-    }
-
-    func exitApp() {
-        exit(main())
     }
 }
 
@@ -36,6 +29,11 @@ func main() -> Int32 {
     print("Running AliceKit and looking for Qt...")
     let application = QApplication()
     let mainWindow = SwiftMachine()
+
+    //Set up a listener to see if the Exit menu has been activated (and shut down the app respectively)
+    mainWindow.mainMenuMWC.actionExit.connectTriggered { checked in
+        application.exit(returnCode: 0)
+    }
 
     //Show the contents of MainWindow
     print("Qt found and running. Turning on Swift Machine...")
