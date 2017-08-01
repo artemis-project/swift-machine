@@ -25,6 +25,5 @@ Issues are filed under the 'Issues' tab in GitHub. For other projects regarding 
 [Visit the Swift Machine dashboard](https://github.com/orgs/artemis-project/projects/2)
 
 This app also helps contribute to the Qlift project by addressing new items and issues, therefore creating a better experience for programming Qt apps in Swift. You can learn more about the Qlift project on the [GitHub repository](http://www.github.com/Longhanks/qlift).
----
 
 [![Powered by AliceKit](http://artemis-project.github.io/assets/images/alicekit-poweredby.png)](https://github.com/artemis-project/alicekit/wiki)
