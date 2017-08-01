@@ -20,6 +20,13 @@ import Qlift
 class SwiftMachine: MainWindowController {
     override init() {
         super.init()
+
+        //TODO: figure out a way for actionExit to exit app properly (this will help bind other menu actions to their respective funtions)
+        self.mainMenuMWC.actionExit.activate(ActionEvent: self.exitApp)
+    }
+
+    func exitApp() {
+        exit(main())
     }
 }
 
@@ -35,10 +42,7 @@ func main() -> Int32 {
     mainWindow.show()
     print("Done. Presenting content...")
     return application.exec()
-    print("Ready for action.")
 }
 
 //Exit the application
 exit(main())
-print("Turning off Swift Machine and cleaning up any leftover ink...")
-print("Done.")

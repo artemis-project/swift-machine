@@ -17,6 +17,7 @@ class mainMenu: QMenuBar {
   var menuFile: QMenu!
   var menuEdit: QMenu!
   var menuWindow: QMenu!
+  var menuProject: QMenu!
 
   //Init all menubar functions
   var actionSeparator: QAction!
@@ -64,6 +65,19 @@ class mainMenu: QMenuBar {
     var actionShowCommandLaunchpad: QAction!
     var actionMinimize: QAction!
     var actionMaximize: QAction!
+
+    /*
+        Project
+            Debug
+            Release
+            Rebuild
+            Project Options
+     */
+    
+    var actionDebugProject: QAction!
+    var actionReleaseProject: QAction!
+    var actionRebuildProject: QAction!
+    var actionProjectPreferences: QAction!
 
   init() {
       super.init()
@@ -118,6 +132,19 @@ class mainMenu: QMenuBar {
 
       actionMaximize = QAction(parent: self)
       actionMaximize.text = "M&aximize"
+
+      //Project
+      actionDebugProject = QAction(parent: self)
+      actionDebugProject.text = "&Debug"
+
+      actionReleaseProject = QAction(parent: self)
+      actionReleaseProject.text = "&Release"
+
+      actionRebuildProject = QAction(parent: self)
+      actionRebuildProject.text = "R&ebuild"
+
+      actionProjectPreferences = QAction(parent: self)
+      actionProjectPreferences.text = "&Project Options"
   }
 
   func createMenu() {
@@ -147,6 +174,13 @@ class mainMenu: QMenuBar {
     menuWindow.add(action: actionMinimize)
     menuWindow.add(action: actionMaximize)
     add(action: menuWindow.menuAction())
+
+    menuProject.title = "&Project"
+    menuProject.add(action: actionDebugProject)
+    menuProject.add(action: actionReleaseProject)
+    menuProject.add(action: actionRebuildProject)
+    menuProject.add(action: actionProjectPreferences)
+    add(action: menuProject.menuAction())
 
   }
 }

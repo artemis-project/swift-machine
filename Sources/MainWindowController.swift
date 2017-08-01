@@ -49,6 +49,7 @@ class MainWindowController: QMainWindow {
         mainMenuMWC.menuFile = QMenu(parent: mainMenuMWC)
         mainMenuMWC.menuEdit = QMenu(parent: mainMenuMWC)
         mainMenuMWC.menuWindow = QMenu(parent: mainMenuMWC)
+        mainMenuMWC.menuProject = QMenu(parent: mainMenuMWC)
         mainMenuMWC.createMenu()
 
         //Attach the menubar
