@@ -1,5 +1,5 @@
 # The Swift Machine
-![The Swift Machine (as of July 31) on ElementaryOS](Resources/Repository/GitHub_Header.gif)
+![Header](Resources/Repository/GitHub_Header.jpg)
 
 The **Swift Machine** brings AliceKit apps and extensions to life and creates them from rich ideas. This integrated development environment eases the process of making beautiful and functional apps in Swift and put the developer in control, not the other way around.
 
