@@ -9,7 +9,7 @@ Yes, we did learn from the mistakes of [Joey Drews's ink machine](https://youtu.
 * Current version: 0.1.0
 * State: Pre-release
 * Requirements:
-    * Qlift 0.0.37
+    * Qlift 0.0.39
     * AliceKit 0.1
 
 ## Building
