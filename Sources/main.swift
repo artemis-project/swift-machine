@@ -35,6 +35,13 @@ func main() -> Int32 {
         application.exit(returnCode: 0)
     }
 
+    //Set up a listener to see if a secret has been activated (and do something hilarious)
+    /*mainWindow.mainMenuMWC.actionSeparator.conntectTriggered { checked in
+        var actionBendy: QDialog!
+        actionBendy = QDialog(parent: mainWindow)
+        actionBendy.
+    }*/
+
     //Show the contents of MainWindow
     print("Qt found and running. Turning on Swift Machine...")
     mainWindow.show()
